@@ -1,0 +1,2 @@
+lib001,libpass123,Alice Smith,40,60000.00
+lib002,securelib,Bob Johnson,35,55000.00

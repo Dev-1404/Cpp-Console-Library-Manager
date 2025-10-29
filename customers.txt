@@ -1,0 +1,2 @@
+cust001,custpass123,Charlie Brown,charlie.b@example.com
+cust002,mysecret,Diana Prince,diana.p@example.com

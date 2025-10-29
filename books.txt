@@ -1,0 +1,7 @@
+BK001,Dune,Frank Herbert,5
+BK002,1984,George Orwell,8
+BK003,Effective C++,Scott Meyers,3
+BK004,The C++ Programming Language,Bjarne Stroustrup,2
+BK005,Head First Java,Kathy Sierra,7
+BK006,Effective Java,Joshua Bloch,4
+BK007,The Great Gatsby,F. Scott Fitzgerald,6
