@@ -603,13 +603,13 @@ private:
         string id,pwd,name,email;
         cout<<"Enter Id: ";
         cin>>id;
-        // LOGICAL CORRECTION: Clear the input buffer after cin>>id to prevent getline from reading leftover newline.
+        // Clearing the input buffer after cin>>id to prevent getline from reading leftover newline.
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout<<"Enter Name: ";
         getline(cin,name);
         cout<<"Enter Password: ";
         cin>>pwd;
-        // LOGICAL CORRECTION: Clear the input buffer after cin>>pwd. This is crucial if 'email'
+        // Clearing the input buffer after cin>>pwd. This is crucial if 'email'
         // input for Customer follows, as its getline would otherwise read this newline.
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -620,15 +620,12 @@ private:
             cin>>hrs;
             cout<<"Enter salary: ";
             cin>>sal;
-            // Optional: Add cin.ignore() here if any getline is expected immediately after cin>>sal
-            // cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
             Librarian newLib(id,pwd,name,hrs,sal);
             userRepo.registerLib(newLib);
         }
         else if(role == 2){ // Customer sign-up
             cout<<"Enter Email: ";
-            getline(cin,email); // This will now correctly read the email as buffer is cleared above.
+            getline(cin,email);
             Customer newCust(id,pwd,name,email);
             userRepo.registerCust(newCust);
         }
@@ -642,17 +639,17 @@ private:
         int role;
         cout<<"Login as:\n1. Librarian\n2. Customer\nEnter choice : ";
         cin>>role;
-        // LOGICAL CORRECTION: Clear the input buffer after cin>>role.
+        // Clearing the input buffer after cin>>role.
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         string id,pwd;
         cout<<"Enter Id: ";
         cin>>id;
-        // LOGICAL CORRECTION: Clear the input buffer after cin>>id.
+        //Clearing the input buffer after cin>>id.
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout<<"Enter Password: ";
         cin>>pwd;
-        // LOGICAL CORRECTION: Clear the input buffer after cin>>pwd.
+        //Clearing the input buffer after cin>>pwd.
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 
@@ -662,9 +659,9 @@ private:
             int userChoice;
             do{
                 currUser->displayMenu(); // Display user-specific menu
-                cout << "Enter your choice: "; // Added explicit prompt for user choice
+                cout << "Enter your choice: "; // Explicit prompt for user choice
                 cin>>userChoice;
-                // LOGICAL CORRECTION: Clear the input buffer after cin>>userChoice.
+                // Clearing the input buffer after cin>>userChoice.
                 // This is important before any potential getline calls within handleChoice methods.
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -701,7 +698,7 @@ public:
                                         <<"3. Exit\n"
                                         <<"Enter Choice : \n";
             cin>>choice;
-            // LOGICAL CORRECTION: Clear the input buffer after cin>>choice from main menu.
+            // Clearing the input buffer after cin>>choice from main menu.
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             switch (choice)
@@ -718,16 +715,17 @@ public:
                 break; // No action needed, loop condition handles exit.
 
             default:
-                    cout<<"Invalid main menu choice. Please try again.\n"; // Corrected typo: "Plz" to "Please"
+                    cout<<"Invalid main menu choice. Please try again.\n"; 
                 break;
             }
         }while(choice != 3); // Loop until user chooses to exit
     }
 };
 
-// Main function: Entry point of the program
+
 int main(){
-    LibraryApplication app; // Create an instance of the application
-    app.run(); // Start the application
-    return 0; // Indicate successful execution
+    LibraryApplication app;
+    app.run(); 
+    return 0; 
 }
+
